@@ -1,0 +1,18 @@
+{% extends "main.html" %} {% block content %}
+
+<h1>Here are our Projects! 😁🎉</h1>
+<h3>No Of Projects => {{noProjects}}</h3>
+<ul>
+  {% for project in projects %}
+  <li>ID: {{project.id}}</li>
+  <li>
+    <a href="/project/{{project.id}}" target="_blank">{{project.title}}</a> --
+    {{project.created}}
+  </li>
+  <li>{{project.vote_count}} Votes</li>
+  <li>Vote Ratio => {{project.vote_ratio}}%</li>
+  <hr />
+  {% endfor%}
+</ul>
+
+{% endblock content %}
