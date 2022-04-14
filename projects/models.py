@@ -1,14 +1,17 @@
+from django.db import models
+import uuid
 from email.policy import default
 from enum import unique
 from random import choices
-from django.db import models
-import uuid
+
 
 
 # Project Table
 class Project (models.Model):
     # id (Primary Key)
     id = models.UUIDField(default=uuid.uuid4, unique=True , primary_key=True, editable=False)
+    #owner (Foreign Key One To Many Relation)
+    #######################################
     # title
     title = models.CharField(max_length=200)
     # description  
@@ -19,6 +22,8 @@ class Project (models.Model):
     source_link= models.CharField(max_length=2000 ,null=True, blank=True)
     # created 
     created = models.DateTimeField(auto_now_add=True)
+    # image
+    image = models.ImageField(null=True , blank=True , default="default.jpg")
     # vote_count 
     vote_count = models.IntegerField(default=0 , null=True , blank=True)
     # vote_ratio 

@@ -1,7 +1,10 @@
-<h1>Nav-Logo</h1>
+{% load static %}
+<a href="/"><img src='{% static "images/logo.svg" %}' alt="" /></a>
+<h1 class="logo">Navbar</h1>
 <nav>
   <ul>
-    <li>Home</li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/create-project/" target="_blank">Add Project</a></li>
     <li>Projects</li>
     <li>Developers</li>
     <li>About</li>
